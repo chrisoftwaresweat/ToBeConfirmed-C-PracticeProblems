@@ -2,25 +2,20 @@
 #include <stdbool.h>
 #include <string.h>
 
-//HELPER for number 1
-bool isPrime(int n){
-    if(n <= 1) return false;
-    for(int i = 2; i * i <= n; i++){
-        if(n % i == 0) return false;
-    }
-    return true;
-}
-
 //1. PRIME RANGE ANALYZER
 void prime_range_analyzer(){
     int L, R;
-    printf("Enter L: "); scanf("%d", &L);
-    printf("Enter R: "); scanf("%d", &R);
-
-    for(int i = L; i <= R; i++){
-        if(isPrime(i)){
-            printf("%d ", i);
+    printf("Enter the L: "); scanf("%d",&L);
+    printf("Enter the R: "); scanf("%d",&R);
+    for(int i=L; i<=R; i++){
+        bool isPrime=true;
+        if(i<=1) isPrime=false;
+        else {
+            for(int j=2; j<i; j++){
+                if(i%2==0) isPrime=false;
+            }
         }
+        if(isPrime) printf("%d ", i);
     }
     printf("\n");
 }
@@ -114,7 +109,7 @@ int quotient11(int n){
 //7. RECURSION: PRODUCT (5 ADDITIONS)
 int product5(int n, int count){
     if(count == 5) return 0;
-    return n + product5(n, count + 1);
+    return n + product5(n, count + 1);  
 }
 
 //8. NUMBER PATTERN
