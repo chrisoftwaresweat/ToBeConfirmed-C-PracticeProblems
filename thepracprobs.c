@@ -129,6 +129,7 @@ void sort_numbers(){
     int n, arr[100];
 
     printf("Enter size: "); scanf("%d", &n);
+    printf("Enter %d numbers: \n", n);
 
     for(int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
